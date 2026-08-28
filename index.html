@@ -1,143 +1,379 @@
 <!doctype html>
 <html lang="de">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PartyRunde</title>
-<meta name="description" content="PartyRunde – Partyspiele für gemeinsame Runden mit Freunden.">
-<style>
-:root{
-  --bg:#0D0D0D;--card:#171717;--text:#FFFFFF;--muted:#8A8A8A;
-  --line:#292929;--red:#FF3B30;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);
-  color:var(--text);line-height:1.6;
-}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(980px, calc(100% - 32px));margin:0 auto}
-header{
-  padding:24px 0;border-bottom:1px solid var(--line);position:sticky;top:0;
-  background:rgba(13,13,13,.96);backdrop-filter:blur(10px);z-index:10;
-}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:900;letter-spacing:.6px;font-size:21px}
-.brand .red{color:var(--red)}
-.navlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.navlinks a{color:#bbb;padding:8px 11px;border-radius:10px}
-.navlinks a:hover{background:#1c1c1c;color:#fff}
-.hero{padding:82px 0 56px}
-.badge{
-  display:inline-block;color:var(--red);background:#251212;border:1px solid #47201d;
-  border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1.2px;
-}
-h1{font-size:clamp(48px,8vw,86px);line-height:.95;margin:18px 0;letter-spacing:-2px}
-h1 .red{color:var(--red)}
-.lead{color:var(--muted);max-width:640px;font-size:18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 70px}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;
-}
-.icon{
-  font-size:30px;width:54px;height:54px;display:grid;place-items:center;background:#232323;
-  border-radius:16px;margin-bottom:14px;
-}
-.card h3{margin:0 0 8px;font-size:19px}
-.card p{margin:0;color:var(--muted);font-size:14px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:13px 17px;border-radius:14px;font-weight:800}
-.btn.primary{background:var(--red)}
-.btn.secondary{background:#1b1b1b;border:1px solid var(--line)}
-main.legal{padding:55px 0 80px}
-.page-title{font-size:42px;margin:0 0 8px}
-.page-sub{color:var(--muted);margin-bottom:30px}
-.legal-card{
-  background:var(--card);border:1px solid var(--line);border-radius:20px;
-  padding:22px;margin-bottom:14px;
-}
-.legal-card h2{font-size:18px;margin:0 0 10px}
-.legal-card p{margin:0;color:#b0b0b0}
-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:#666;font-size:13px}
-.footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:760px){
-  .grid{grid-template-columns:1fr}.hero{padding-top:54px}.nav{align-items:flex-start}
-  .navlinks{font-size:13px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>PartyRunde</title>
+
+  <meta
+    name="description"
+    content="PartyRunde – Partyspiele für gemeinsame Runden mit Freunden."
+  >
+
+  <style>
+    :root {
+      --bg: #0D0D0D;
+      --card: #171717;
+      --text: #FFFFFF;
+      --muted: #8A8A8A;
+      --line: #292929;
+      --red: #FF3B30;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: .6px;
+      font-size: 21px;
+    }
+
+    .brand .red {
+      color: var(--red);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 82px 0 56px;
+    }
+
+    .badge {
+      display: inline-block;
+      color: var(--red);
+      background: #251212;
+      border: 1px solid #47201d;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: .95;
+      margin: 18px 0;
+      letter-spacing: -2px;
+    }
+
+    h1 .red {
+      color: var(--red);
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 18px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 17px;
+      border-radius: 14px;
+      font-weight: 800;
+    }
+
+    .btn.primary {
+      background: var(--red);
+    }
+
+    /* SPIELE */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 38px 0 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .icon {
+      font-size: 30px;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      background: #232323;
+      border-radius: 16px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0 45px;
+      color: #666666;
+      font-size: 13px;
+    }
+
+    .footerLinks {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .footerLinks a {
+      color: #AAAAAA;
+      font-weight: 700;
+    }
+
+    .footerLinks a:hover {
+      color: #FFFFFF;
+    }
+
+    .footerData {
+      padding-top: 18px;
+      border-top: 1px solid #222222;
+      color: #555555;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      margin-top: 18px;
+      color: #444444;
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .footerLinks {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="red">PARTY</span>RUNDE</a>
-    <nav class="navlinks">
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
-  </div>
-</header>
 
-<main>
-  <section class="wrap hero">
-    <span class="badge">PARTYGAME APP</span>
-    <h1><span class="red">PARTY</span><br>RUNDE</h1>
-    <p class="lead">Ein Handy. Mehrere Spieler. Drei Spiele für Quiz, Begriffe und ehrliche Geschichten.</p>
+  <!-- HEADER -->
 
-    <div class="cta">
-      <a class="btn primary" href="#spiele">Spiele ansehen</a>
-      <a class="btn secondary" href="datenschutz.html">Datenschutz</a>
+  <header>
+    <div class="wrap nav">
+
+      <a class="brand" href="index.html">
+        <span class="red">PARTY</span>RUNDE
+      </a>
+
     </div>
-  </section>
+  </header>
 
-  <section class="wrap" id="spiele">
-    <div class="grid">
-      <article class="card">
-        <div class="icon">🧠</div>
-        <h3>Allgemeinwissen</h3>
-        <p>Fragen beantworten, Punkte sammeln und herausfinden, wer am meisten weiß.</p>
-      </article>
-      <article class="card">
-        <div class="icon">💬</div>
-        <h3>Begriffe Battle</h3>
-        <p>In 30 Sekunden so viele passende Begriffe wie möglich nennen.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🙋</div>
-        <h3>Wer hat schon mal?</h3>
-        <p>Findet heraus, auf wen die Aussagen wirklich zutreffen.</p>
-      </article>
-    </div>
-  </section>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-row">
-      <div>
+  <!-- HAUPTBEREICH -->
+
+  <main>
+
+    <section class="wrap hero">
+
+      <span class="badge">
+        PARTYGAME APP
+      </span>
+
+      <h1>
+        <span class="red">PARTY</span>
+        <br>
+        RUNDE
+      </h1>
+
+      <p class="lead">
+        Ein Handy. Mehrere Spieler.
+        Drei Spiele für Quiz, Begriffe und ehrliche Geschichten.
+      </p>
+
+      <div class="cta">
+
+        <a
+          class="btn primary"
+          href="#spiele"
+        >
+          Spiele ansehen
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SPIELE -->
+
+    <section
+      class="wrap"
+      id="spiele"
+    >
+
+      <div class="grid">
+
+        <article class="card">
+
+          <div class="icon">
+            🧠
+          </div>
+
+          <h3>
+            Allgemeinwissen
+          </h3>
+
+          <p>
+            Fragen beantworten, Punkte sammeln und herausfinden,
+            wer am meisten weiß.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="icon">
+            💬
+          </div>
+
+          <h3>
+            Begriffe Battle
+          </h3>
+
+          <p>
+            In 30 Sekunden so viele passende Begriffe
+            wie möglich nennen.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="icon">
+            🙋
+          </div>
+
+          <h3>
+            Wer hat schon mal?
+          </h3>
+
+          <p>
+            Findet heraus, auf wen die Aussagen
+            wirklich zutreffen.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- GANZ UNTEN -->
+
+  <footer>
+
+    <div class="wrap">
+
+      <div class="footerLinks">
+
+        <a href="datenschutz.html">
+          Datenschutz
+        </a>
+
+        <a href="impressum.html">
+          Impressum
+        </a>
+
+      </div>
+
+      <div class="footerData">
+
+        Lisa Weigelt
+        <br>
+
+        Kirchstraße 12 · 71229 Leonberg · Deutschland
+        <br>
+
+        lisaweigelt221215@gmail.com
+
+      </div>
+
+      <div class="copyright">
         © 2026 PartyRunde
       </div>
 
-      <div>
-        <a href="datenschutz.html">Datenschutz</a>
-        ·
-        <a href="impressum.html">Impressum</a>
-      </div>
     </div>
 
-    <div style="
-      margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid #292929;
-      color: #555555;
-      font-size: 12px;
-      line-height: 1.7;
-    ">
-      Lisa Weigelt<br>
-      Kirchstraße 12 · 71229 Leonberg · Deutschland<br>
-      lisaweigelt221215@gmail.com
-    </div>
-  </div>
-</footer>
+  </footer>
+
 </body>
+
 </html>
