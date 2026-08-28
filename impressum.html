@@ -1,114 +1,185 @@
 <!doctype html>
 <html lang="de">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Impressum – PartyRunde</title>
-<style>
-:root{
-  --bg:#0D0D0D;--card:#171717;--text:#FFFFFF;--muted:#8A8A8A;
-  --line:#292929;--red:#FF3B30;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);
-  color:var(--text);line-height:1.6;
-}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(980px, calc(100% - 32px));margin:0 auto}
-header{
-  padding:24px 0;border-bottom:1px solid var(--line);position:sticky;top:0;
-  background:rgba(13,13,13,.96);backdrop-filter:blur(10px);z-index:10;
-}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:900;letter-spacing:.6px;font-size:21px}
-.brand .red{color:var(--red)}
-.navlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-.navlinks a{color:#bbb;padding:8px 11px;border-radius:10px}
-.navlinks a:hover{background:#1c1c1c;color:#fff}
-.hero{padding:82px 0 56px}
-.badge{
-  display:inline-block;color:var(--red);background:#251212;border:1px solid #47201d;
-  border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:1.2px;
-}
-h1{font-size:clamp(48px,8vw,86px);line-height:.95;margin:18px 0;letter-spacing:-2px}
-h1 .red{color:var(--red)}
-.lead{color:var(--muted);max-width:640px;font-size:18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:38px 0 70px}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;
-}
-.icon{
-  font-size:30px;width:54px;height:54px;display:grid;place-items:center;background:#232323;
-  border-radius:16px;margin-bottom:14px;
-}
-.card h3{margin:0 0 8px;font-size:19px}
-.card p{margin:0;color:var(--muted);font-size:14px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:13px 17px;border-radius:14px;font-weight:800}
-.btn.primary{background:var(--red)}
-.btn.secondary{background:#1b1b1b;border:1px solid var(--line)}
-main.legal{padding:55px 0 80px}
-.page-title{font-size:42px;margin:0 0 8px}
-.page-sub{color:var(--muted);margin-bottom:30px}
-.legal-card{
-  background:var(--card);border:1px solid var(--line);border-radius:20px;
-  padding:22px;margin-bottom:14px;
-}
-.legal-card h2{font-size:18px;margin:0 0 10px}
-.legal-card p{margin:0;color:#b0b0b0}
-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:#666;font-size:13px}
-.footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:760px){
-  .grid{grid-template-columns:1fr}.hero{padding-top:54px}.nav{align-items:flex-start}
-  .navlinks{font-size:13px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Impressum – PartyRunde</title>
+
+  <style>
+    :root {
+      --bg: #0D0D0D;
+      --card: #171717;
+      --text: #FFFFFF;
+      --muted: #8A8A8A;
+      --line: #292929;
+      --red: #FF3B30;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 21px;
+      letter-spacing: .6px;
+    }
+
+    .brand .red {
+      color: var(--red);
+    }
+
+    main {
+      min-height: 70vh;
+      padding: 55px 0 80px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 0 0 8px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 14px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #B0B0B0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 35px;
+      color: #555555;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .footerLinks {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footerLinks a {
+      color: #777777;
+      font-size: 11px;
+    }
+
+    .footerData {
+      color: #444444;
+      font-size: 10px;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="red">PARTY</span>RUNDE</a>
-    <nav class="navlinks">
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
-  </div>
-</header>
 
-<main class="wrap legal">
-  <h1 class="page-title">Impressum</h1>
-  <p class="page-sub">Angaben zum Anbieter der App PartyRunde</p>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="red">PARTY</span>RUNDE
+      </a>
+    </div>
+  </header>
 
-  <section class="legal-card">
-    <h2>Anbieter</h2>
-    <p>
-      Lisa Weigelt<br>
-      Kirchstraße 12<br>
-      71229 Leonberg<br>
-      Deutschland
+  <main class="wrap">
+
+    <h1>Impressum</h1>
+
+    <p class="subtitle">
+      Angaben zum Anbieter der App PartyRunde
     </p>
-  </section>
 
-  <section class="legal-card">
-    <h2>Kontakt</h2>
-    <p>E-Mail: lisaweigelt221215@gmail.com</p>
-  </section>
+    <section class="card">
+      <h2>Anbieter</h2>
 
-  <section class="legal-card">
-    <h2>PartyRunde</h2>
-    <p>Verantwortlich für die Bereitstellung und den Betrieb der App: Lisa Weigelt.</p>
-  </section>
+      <p>
+        Lisa Weigelt<br>
+        Kirchstraße 12<br>
+        71229 Leonberg<br>
+        Deutschland
+      </p>
+    </section>
 
-  <p class="page-sub">Stand: August 2026</p>
-</main>
+    <section class="card">
+      <h2>Kontakt</h2>
 
-<footer>
-  <div class="wrap footer-row">
-    <div>© 2026 PartyRunde</div>
-    <div><a href="index.html">Startseite</a></div>
-  </div>
-</footer>
+      <p>
+        E-Mail: lisaweigelt221215@gmail.com
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>PartyRunde</h2>
+
+      <p>
+        Verantwortlich für die Bereitstellung und den Betrieb
+        der App PartyRunde: Lisa Weigelt.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+
+      <div class="footerLinks">
+        <a href="datenschutz.html">Datenschutz</a>
+        <span>·</span>
+        <a href="impressum.html">Impressum</a>
+      </div>
+
+      <div class="footerData">
+        Lisa Weigelt · Kirchstraße 12 · 71229 Leonberg · Deutschland
+        <br>
+        lisaweigelt221215@gmail.com
+        <br>
+        © 2026 PartyRunde
+      </div>
+
+    </div>
+  </footer>
+
 </body>
 </html>
